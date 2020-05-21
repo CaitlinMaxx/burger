@@ -15,16 +15,16 @@
 
 <ul>
   {{#each burger}}
-    {{#if devoured}}
+    {{#unless devoured}}
       <li>
             {{burger_name}}
 
             <button class="change-devoured" data-id="{{id}}" data-newdevoure="{{devoured}}">
-                Devoure!
+                Devoure It!
             </button>
             <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
         </li>
-    {{/if}}
+    {{/unless}}
   {{/each}}
 </ul>
 
@@ -32,15 +32,11 @@
 
 <ul>
   {{#each burger}}
-    {{#unless devoured}}
+    {{#if devoured}}
       <li>
             {{name}}
-
-            <button class="change-devoured" data-id="{{id}}" data-newdevoure="{{devoured}}">
-                Devoure!
-            </button>
             <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
         </li>
-    {{/unless}}
+    {{/if}}
   {{/each}}
 </ul>
